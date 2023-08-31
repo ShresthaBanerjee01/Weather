@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,12 +38,20 @@ public class WeatherRVAdapter extends RecyclerView.Adapter<WeatherRVAdapter.View
 
     @Override
     public int getItemCount() {
-        return 0;
+        return weatherRVModalArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+        private TextView windTV, temperatureTV, timeTV;
+        private ImageView conditionIV;
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            windTV=itemView.findViewById(R.id.idTVWindSpeed);
+            temperatureTV=itemView.findViewById(R.id.idTVTemperature);
+            timeTV=itemView.findViewById(R.id.idTVTime);
+            conditionIV=itemView.findViewById(R.id.idTVCondition);
         }
     }
 }
